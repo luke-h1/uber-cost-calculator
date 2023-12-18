@@ -12,5 +12,10 @@
 4. Run `deno run --allow-read --allow-write index.ts`
 5. Open the console to see the total amount spent 🙈
 
+### Contributing
+Feel free to contribute! I've not accounted for all the different types of data that uber can return (i.e. I've not accounted for data that includes if you've worked for Uber). If you'd like to fix up the script for your own use case, please feel free to submit a PR! 🙌
+
+We follow conventional commits (https://www.conventionalcommits.org/en/v1.0.0/) for commit messages. Please ensure that your commit messages follow this format.
+
 ## License
 MIT
