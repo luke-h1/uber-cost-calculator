@@ -32,13 +32,13 @@ const logTripCosts = async () => {
     })
     .on("end", () => {
       const allFares: number[] = [0];
-      const endYear = results[0]["Request Time"].split(" ")[0].split("-")[0];
-      const endMonth = results[0]["Request Time"].split(" ")[0].split("-")[1];
+      const startYear = results[0]["Request Time"].split(" ")[0].split("-")[0];
+      const startMonth = results[0]["Request Time"].split(" ")[0].split("-")[1];
 
-      const startYear = results[results.length - 1]["Request Time"]
+      const endYear = results[results.length - 1]["Request Time"]
         .split(" ")[0]
         .split("-")[0];
-      const startMonth = results[results.length - 1]["Request Time"]
+      const endMonth = results[results.length - 1]["Request Time"]
         .split(" ")[0]
         .split("-")[1];
 
@@ -51,7 +51,7 @@ const logTripCosts = async () => {
 
       const totalCost = allFares.reduce((a, b) => a + b, 0).toFixed(2);
       console.log(
-        `You spent £${totalCost} on uber trips between ${endMonth}/${endYear} ${startMonth}/${startYear}`
+        `You spent £${totalCost} on uber trips between ${endMonth}/${endYear} and ${startMonth}/${startYear}`
       );
     });
 };
@@ -81,14 +81,14 @@ const logEatsCosts = async () => {
       results.push(data);
     })
     .on("end", () => {
-        const endYear = results[0]["Order Time"].split(" ")[0].split("-")[0];
-        const endMonth = results[0]["Order Time"].split(" ")[0].split("-")[1];
+        const startYear = results[0]["Order Time"].split(" ")[0].split("-")[0];
+        const startMonth = results[0]["Order Time"].split(" ")[0].split("-")[1];
 
-        const startYear = results[results.length - 1]["Order Time"]
+        const endYear = results[results.length - 1]["Order Time"]
           .split(" ")[0]
           .split("-")[0];
 
-        const startMonth = results[results.length - 1]["Order Time"]
+        const endMonth = results[results.length - 1]["Order Time"]
             .split(" ")[0]
             .split("-")[1];
 
@@ -103,7 +103,7 @@ const logEatsCosts = async () => {
 
             const totalCost = allFares.reduce((a, b) => a + b, 0).toFixed(2);
             console.log(
-                `You spent £${totalCost} on uber eats orders between ${endMonth}/${endYear} ${startMonth}/${startYear}`
+                `You spent £${totalCost} on uber eats orders between ${endMonth}/${endYear} and ${startMonth}/${startYear}`
             );
 
 
